@@ -201,14 +201,17 @@ public class SensorColorTestsEdited extends LinearOpMode {
 
 
        //has greater and less thans
-       if (colors.red >= 0.067 && colors.green <= 0.050 && colors.blue <= 0.030) {
-       telemetry.addData("Red", "%.3f");
+       if (hsvValues[0] > 21 && hsvValues[0] <28 ) {
+       telemetry.addData("Red", "%.3f", hsvValues[0]);
        }
-       else if (colors.red <= 0.110 && colors.green >= 0.15 && colors.blue <= 0.05) {
-       telemetry.addData("Yellow?", "%.3f");
+       else if (hsvValues[0] > 79 && hsvValues[0] < 86) {
+       telemetry.addData("Yellow?", "%.3f", hsvValues[0]);
        }
-       else if (colors.red <= 0.030 && colors.green <= 0.05 && colors.blue >= 0.1) {
-       telemetry.addData("blue hopefully", "%.3f");
+       else if (hsvValues[0] > 215 && hsvValues[0] < 225) {
+       telemetry.addData("blue hopefully", "%.3f", hsvValues[0]);
+       }
+       else {
+         telemetry.addData("no color found", 0);
        }
 
 
