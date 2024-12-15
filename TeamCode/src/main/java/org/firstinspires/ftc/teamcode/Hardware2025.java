@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import android.graphics.Color;
 
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -37,6 +38,9 @@ public class Hardware2025 {
 
     // Run time (public)
     private final ElapsedTime runtime = new ElapsedTime();
+
+    public Hardware2025(HardwareMap hardwareMap, boolean b) {
+    }
 
     // Color sensing
     public enum sampleColor {RED, YELLOW, BLUE, NONE} //color sensing enum
@@ -106,7 +110,7 @@ public class Hardware2025 {
      * All of the hardware devices are accessed via the hardware map, and initialized.
      */
 
-    public void init() {
+    public void init(HardwareMap hardwareMap) {
 
         // Define and Initialize Motors (note: need to use reference to actual OpMode).
         leftFrontDrive = myOpMode.hardwareMap.get(DcMotor.class, "left_front_drive");
