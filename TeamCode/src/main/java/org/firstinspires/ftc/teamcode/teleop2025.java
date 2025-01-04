@@ -60,6 +60,8 @@ public class teleop2025 extends LinearOpMode {
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
 
+            robot.driveWithOtos();
+
             // This button choice was made so that it is hard to hit on accident
             // The equivalent button is start on Xbox-style controllers.
             if (gamepad1.options) {
@@ -149,6 +151,8 @@ public class teleop2025 extends LinearOpMode {
             else {
                 robot.moveArm(0);
             }
+            telemetry.update();
+
         }
     }
 }
