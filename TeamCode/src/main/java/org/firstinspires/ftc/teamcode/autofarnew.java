@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 //@Disabled
 public class autofarnew extends LinearOpMode {
 
-    Hardware2025 robot = new Hardware2025(this);
+    Otos2025 robot = new Otos2025(this);
     private final ElapsedTime runtime = new ElapsedTime();
 
 
@@ -17,6 +17,14 @@ public class autofarnew extends LinearOpMode {
         robot.init();
         waitForStart();
         runtime.reset();
-        robot.driveByOtos(5,5,0);
+//        robot.driveByOtos(0.0,5.0,0.0);
+//        robot.driveByOtos(0.0,0.0,30.0);
+        robot.driveByOtos(10,10,90);
+        robot.driveByOtos(-10,-10,0);
+        sleep(200);
+
+//        robot.driveByOtos(5.,5.,30.0);
+//        robot.driveByOtos(-10.,0.,0);
+//        robot.driveByOtos(-5.,-5.,0);
     }
 }
